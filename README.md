@@ -5,7 +5,7 @@ This script will check a statistics file issued from an OmegaT project and will 
 ## Definitions
 
 | Term     | Definition | 
-|--------- |----------|
+|:---------|:----------|
 | Batch    | Folder inside the `source` folder containing translation files. |
 | Complete | All segments in all files belong to a batch are translated.     |
 
