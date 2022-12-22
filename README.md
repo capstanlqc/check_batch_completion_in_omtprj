@@ -52,7 +52,7 @@ Run the following command to see other related options:
 java -jar /path/to/OmegaT_5.8.0/OmegaT.jar --help
 ```
 
-## Execution
+## Offline execution
 
 Call the script as:
 
@@ -67,3 +67,7 @@ python omt_check_batch_completion.py -f /path/to/project_stats.txt
 ```
 
 Tested with Python 3.10.8 
+
+## Execution on the repository
+
+For Github repositories: https://github.com/marketplace/actions/omegat-stat
