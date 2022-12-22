@@ -1,0 +1,16 @@
+22/12/2022, 12:06
+Project Statistics
+
+                 	Segments	Words	Characters (w/o spaces)	Characters (w/ spaces)	#Files	
+Total:           	      65	  382	                   1734	                  2045	     3	
+Remaining:       	      47	  235	                   1046	                  1229	     3	
+Unique:          	      61	  348	                   1580	                  1861	     3	
+Unique Remaining:	      47	  235	                   1046	                  1229	     3	
+
+
+Individual File Statistics:
+
+File Name                          	Total Segments	Remaining Segments	Unique Segments	Unique Remaining Segments	Total Words	Remaining Words	Unique Words	Unique Remaining Words	Total Characters (w/o spaces)	Remaining Characters (w/o spaces)	Unique Characters (w/o spaces)	Unique Remaining Characters (w/o spaces)	Total Characters (w/ spaces)	Remaining Characters (w/ spaces)	Unique Characters (w/ spaces)	Unique Remaining Characters (w/ spaces)	
+batch1/Dissolving_Crystals.docx    	            18	                13	             18	                       13	         98	             58	          98	                    58	                          477	                              300	                           477	                                     300	                         551	                             340	                          551	                                    340	
+batch2/Dissolving_Crystals_REC.docx	            14	                 0	             10	                        1	        116	              9	          82	                     9	                          554	                               43	                           400	                                      43	                         656	                              51	                          472	                                     51	
+batch3/MoonSoil.docx               	            33	                33	             33	                       33	        168	            168	         168	                   168	                          703	                              703	                           703	                                     703	                         838	                             838	                          838	                                    838	

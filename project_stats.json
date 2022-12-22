@@ -1,0 +1,132 @@
+{
+  "total": {
+    "segments": 65,
+    "words": 382,
+    "characters-without-spaces": 1734,
+    "characters": 2045,
+    "files": 3
+  },
+  "remaining": {
+    "segments": 46,
+    "words": 226,
+    "characters-without-spaces": 1003,
+    "characters": 1178,
+    "files": 2
+  },
+  "unique": {
+    "segments": 61,
+    "words": 348,
+    "characters-without-spaces": 1580,
+    "characters": 1861,
+    "files": 3
+  },
+  "project": {
+    "name": "pisa_2025ft_translation_fr-ZZ_translation1_marie",
+    "root": "/home/souto/Work/pisa_2025ft_translation_fr-ZZ_translation1_marie/",
+    "source-langauge": "en",
+    "target-language": "fr-ZZ"
+  },
+  "unique-remaining": {
+    "segments": 46,
+    "words": 226,
+    "characters-without-spaces": 1003,
+    "characters": 1178,
+    "files": 2
+  },
+  "files": [
+    {
+      "filename": "batch1/Dissolving_Crystals.docx",
+      "total": {
+        "segments": 18,
+        "words": 98,
+        "characters-without-spaces": 477,
+        "characters": 551,
+        "files": 0
+      },
+      "unique": {
+        "segments": 18,
+        "words": 98,
+        "characters-without-spaces": 477,
+        "characters": 551,
+        "files": 0
+      },
+      "remaining": {
+        "segments": 13,
+        "words": 58,
+        "characters-without-spaces": 300,
+        "characters": 340,
+        "files": 0
+      },
+      "unique-remaining": {
+        "segments": 13,
+        "words": 58,
+        "characters-without-spaces": 300,
+        "characters": 340,
+        "files": 0
+      }
+    },
+    {
+      "filename": "batch2/Dissolving_Crystals_REC.docx",
+      "total": {
+        "segments": 14,
+        "words": 116,
+        "characters-without-spaces": 554,
+        "characters": 656,
+        "files": 0
+      },
+      "unique": {
+        "segments": 10,
+        "words": 82,
+        "characters-without-spaces": 400,
+        "characters": 472,
+        "files": 0
+      },
+      "remaining": {
+        "segments": 0,
+        "words": 0,
+        "characters-without-spaces": 0,
+        "characters": 0,
+        "files": 0
+      },
+      "unique-remaining": {
+        "segments": 0,
+        "words": 0,
+        "characters-without-spaces": 0,
+        "characters": 0,
+        "files": 0
+      }
+    },
+    {
+      "filename": "batch3/MoonSoil.docx",
+      "total": {
+        "segments": 33,
+        "words": 168,
+        "characters-without-spaces": 703,
+        "characters": 838,
+        "files": 0
+      },
+      "unique": {
+        "segments": 33,
+        "words": 168,
+        "characters-without-spaces": 703,
+        "characters": 838,
+        "files": 0
+      },
+      "remaining": {
+        "segments": 33,
+        "words": 168,
+        "characters-without-spaces": 703,
+        "characters": 838,
+        "files": 0
+      },
+      "unique-remaining": {
+        "segments": 33,
+        "words": 168,
+        "characters-without-spaces": 703,
+        "characters": 838,
+        "files": 0
+      }
+    }
+  ],
+  "date": "20221222T104903Z"
+}
