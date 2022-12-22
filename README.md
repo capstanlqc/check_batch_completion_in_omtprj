@@ -68,6 +68,6 @@ python omt_check_batch_completion.py -f /path/to/project_stats.txt
 
 Tested with Python 3.10.8 
 
-## Execution on the repository
+## Online execution
 
 For Github repositories: https://github.com/marketplace/actions/omegat-stat
