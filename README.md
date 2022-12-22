@@ -16,7 +16,7 @@ This script will check a statistics file issued from an OmegaT project and will 
 This script assumes that the `source` folder of the project has the following 2-level structure (where the first level has the batch folders and the second level has the files themselves):
 
 ```
-source  tree .
+source > tree .
 .
 ├── batch01
 │   ├── file1.xml
