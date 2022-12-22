@@ -70,7 +70,7 @@ Tested with Python 3.10.8
 
 ## Online execution
 
-For Github repositories: https://github.com/marketplace/actions/omegat-stat
+For Github repositories: https://github.com/marketplace/actions/omegat-stat. It might be possible to implement a similar routine in AWS CodeCommit.
 
 ## Results
 
