@@ -71,3 +71,18 @@ Tested with Python 3.10.8
 ## Online execution
 
 For Github repositories: https://github.com/marketplace/actions/omegat-stat
+
+## Results
+
+Results are returned in the form of a dictionary where the key is tha name of the batch and the value is the completion status.
+
+```python
+{
+	'batch1': False, 
+	'batch2': True, 
+	'batch3': False
+}
+``` 
+
+Batches that are completed (e.g. batch2 above) can be pushed to the next step in the workflow.
+
