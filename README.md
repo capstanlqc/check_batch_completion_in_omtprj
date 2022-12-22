@@ -78,9 +78,9 @@ Results are returned in the form of a dictionary where the key is tha name of th
 
 ```python
 {
-	'batch1': False, 
-	'batch2': True, 
-	'batch3': False
+  'batch1': False, 
+  'batch2': True, 
+  'batch3': False
 }
 ``` 
 
