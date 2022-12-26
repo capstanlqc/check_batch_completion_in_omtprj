@@ -40,7 +40,7 @@ The stats text file is generated whenever the OmegaT project is open in OmegaT, 
 java -jar /path/to/OmegaT_5.7.1/OmegaT.jar /path/to/project --mode=console-translate
 ``` 
 
-To produce the stats JSON file, version 5.8 (or higher) of OmegaT is necessary (soon to be released but available as of 2022-12-22 as a nightly build from the [official Github repo](github.com/).omegat-org/omegat). 
+To produce the stats JSON file, version 5.8 (or higher) of OmegaT is necessary (soon to be released but available as of 2022-12-22 as a nightly build from the [official Github repo](https://github.com/omegat-org/omegat). 
 
 ```
 java -jar /path/to/OmegaT_5.8.0/OmegaT.jar /path/to/project --mode=console-stats --output-file=project_stats.json
