@@ -102,6 +102,9 @@ cd omegat
 
 # build from source (this creates build/install/OmegaT/OmegaT.jar)
 ./gradlew installDist
+
+# get absolute path to omegat binary
+omt_inst_path=$(readlink -f build/install/OmegaT/)
 ```
 
 ### Fetch OmegaT project
@@ -117,7 +120,7 @@ git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/$omt_proj
 omt_proj_path=$(readlink -f $omt_proj)
 
 # use omegat to obtain project stats in json
-java -jar /home/souto/Repos/omegat-org/omegat/build/install/OmegaT/OmegaT.jar $omt_proj_path  --mode=console-stats --output-file=$omt_proj_path/omegat/project_stats.json
+java -jar $omt_inst_path/OmegaT.jar $omt_proj_path  --mode=console-stats --output-file=$omt_proj_path/omegat/project_stats.json
 ```
 
 ### Set up application
