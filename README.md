@@ -57,20 +57,20 @@ java -jar /path/to/OmegaT_5.8.0/OmegaT.jar --help
 Call the script as:
 
 ```
-python omt_check_batch_completion.py -f /path/to/project_stats.json
+python omt_check_batch_completion.py -f path/to/project_stats.json
 ```
 
 or 
 
 ```
-python omt_check_batch_completion.py -f /path/to/project_stats.txt
+python omt_check_batch_completion.py -f path/to/project_stats.txt
 ```
 
 Tested with Python 3.10.8 
 
 ## Online execution
 
-For Github repositories: https://github.com/marketplace/actions/omegat-stat. It might be possible to implement a similar routine in AWS CodeCommit.
+For Github repositories: https://github.com/marketplace/actions/omegat-stat. It might be possible to implement a similar routine in AWS CodeCommit or Azure DevOps.
 
 ## Results
 
