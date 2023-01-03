@@ -120,7 +120,8 @@ git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/$omt_proj
 omt_proj_path=$(readlink -f $omt_proj)
 
 # use omegat to obtain project stats in json
-java -jar $omt_inst_path/OmegaT.jar $omt_proj_path --mode=console-stats --output-file=$omt_proj_path/omegat/project_stats.json
+java -jar $omt_inst_path/OmegaT.jar $omt_proj_path \
+--mode=console-stats --output-file=$omt_proj_path/omegat/project_stats.json
 ```
 
 ### Set up application
@@ -159,11 +160,14 @@ Depending on your choice above, you may run the application using _either_ poetr
 
 ```bash
 # run app with poetry
-cd $app_root && poetry run python omt_check_batch_completion.py -f $omt_proj_path/omegat/project_stats.json && cd -
+cd $app_root && poetry run python omt_check_batch_completion.py \
+-f $omt_proj_path/omegat/project_stats.json && cd -
 ```
 
 _or_ venv: 
 
 ```bash
-source $app_root/venv/bin/activate && python $app_root/omt_check_batch_completion.py -f $proj_path/omegat/project_stats.json && deactivate
+source $app_root/venv/bin/activate && \
+python $app_root/omt_check_batch_completion.py \
+-f $proj_path/omegat/project_stats.json && deactivate
 ```
