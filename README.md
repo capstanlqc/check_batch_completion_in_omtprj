@@ -107,7 +107,7 @@ cd omegat
 omt_inst_path=$(readlink -f build/install/OmegaT/)
 ```
 
-### Fetch OmegaT project
+### Fetch OmegaT project and get statistics
 
 ```bash
 # set omegat project name
@@ -120,7 +120,7 @@ git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/$omt_proj
 omt_proj_path=$(readlink -f $omt_proj)
 
 # use omegat to obtain project stats in json
-java -jar $omt_inst_path/OmegaT.jar $omt_proj_path  --mode=console-stats --output-file=$omt_proj_path/omegat/project_stats.json
+java -jar $omt_inst_path/OmegaT.jar $omt_proj_path --mode=console-stats --output-file=$omt_proj_path/omegat/project_stats.json
 ```
 
 ### Set up application
