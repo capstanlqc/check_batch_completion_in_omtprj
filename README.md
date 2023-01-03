@@ -88,6 +88,22 @@ Batches that are completed (e.g. batch2 above) can be pushed to the next step in
 
 ## Example using a virtual environment
 
+### Install OmegaT 5.8.0
+
+```bash
+# change directory to my clones directory
+cd /home/souto/Repos/
+
+# clone omegat's source code
+gh repo clone omegat-org/omegat omegat-org/omegat
+
+# change directory to the omegat's source code directory
+cd omegat
+
+# build from source (this creates build/install/OmegaT/OmegaT.jar)
+./gradlew installDist
+```
+
 ### Fetch OmegaT project
 
 ```bash
