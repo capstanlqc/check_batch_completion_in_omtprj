@@ -86,3 +86,65 @@ Results are returned in the form of a dictionary where the key is tha name of th
 
 Batches that are completed (e.g. batch2 above) can be pushed to the next step in the workflow.
 
+## Example using a virtual environment
+
+### Fetch OmegaT project
+
+```bash
+# set omegat project name
+omt_proj="project_cycle-stage_xx-YY_step"
+
+# clone project's repo
+git clone https://git-codecommit.eu-central-1.amazonaws.com/v1/repos/$omt_proj
+
+# get absolute path of the clone project's folder
+omt_proj_path=$(readlink -f $omt_proj)
+
+# use omegat to obtain project stats in json
+java -jar /home/souto/Repos/omegat-org/omegat/build/install/OmegaT/OmegaT.jar $omt_proj_path  --mode=console-stats --output-file=$omt_proj_path/omegat/project_stats.json
+```
+
+### Set up application
+
+```bash
+# clone app's repo
+gh repo clone capstanlqc/check-batch-completion
+
+# get absolute path to the app's root directory
+app_root=$(readlink -f check-batch-completion)
+
+# change directory to the app's root directory
+cd $app_root
+```
+
+You may create a virtual environment and install dependencies using _either_ poetry:
+
+```bash
+# install dependencies with poetry
+poetry install
+```
+
+_or_ a more standard approach (with more steps) using pip and venv:
+
+```bash
+# create virtual environment
+python -m venv venv
+
+# install dependencies with pip (activating the virtual environment)
+source venv/bin/activate && pip install -r requirements.txt && deactivate
+```
+
+### Run the application
+
+Depending on your choice above, you may run the application using _either_ poetry:
+
+```bash
+# run app with poetry
+cd $app_root && poetry run python omt_check_batch_completion.py -f $omt_proj_path/omegat/project_stats.json && cd -
+```
+
+_or_ venv: 
+
+```bash
+source $app_root/venv/bin/activate && python $app_root/omt_check_batch_completion.py -f $proj_path/omegat/project_stats.json && deactivate
+```
