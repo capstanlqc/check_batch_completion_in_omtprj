@@ -4,9 +4,9 @@
 # java -jar /path/to/5.8//OmegaT.jar --mode=console-stats /path/to/proj --output-file=project_stats.json
 
 # call the script as
-# python3.10 omt_check_batch_completion.py -f /path/to/project_stats.json
+# python3.10 omt_check_batch_completion.py -f /path/to/project_stats.json -b 03_COS_SCI-C_N
 # or 
-# python3.10 omt_check_batch_completion.py -f /path/to/project_stats.txt
+# python3.10 omt_check_batch_completion.py -f /path/to/project_stats.txt -b 03_COS_SCI-C_N
 
 '''
 this script assumes that the source folder has the following 2-level structure
@@ -96,16 +96,20 @@ def get_batch_status_from_text(fpath, regex):
     return completed
 
 
+# argument after -f 
+fpath = sys.argv[2]
+# argument after -b 
+batch = sys.argv[4]
+
 ### constants
 
 completed = {}
 # fpath = "project_stats.txt"
 # fpath = "output.json"
-batch_name_pattern = r"^(batch\d+)/"
+# batch_name_pattern = r"^(batch\d+)/"
+batch_name_pattern = r"^" + re.escape(batch) + r"/"
 regex = re.compile(batch_name_pattern, re.IGNORECASE)
 
-# argument after -f 
-fpath = sys.argv[2]
 
 ### logic 
 
@@ -121,5 +125,7 @@ if __name__ == "__main__":
         completed = get_batch_status_from_text(fpath, regex)
 
     # print results
-    for k, v in completed.items():
-        print(f"batch '{k}' complete? {v}")
+    #for k, v in completed.items():
+    #    print(f"batch '{k}' complete? {v}")
+    # Also return false when the batch is not found
+    print("True" if completed.get(batch,False) else "False"
