@@ -4,9 +4,9 @@
 # java -jar /path/to/5.8//OmegaT.jar --mode=console-stats /path/to/proj --output-file=project_stats.json
 
 # call the script as
-# python3.10 omt_check_batch_completion.py -f /path/to/project_stats.json -b 03_COS_SCI-C_N
+# python3.10 omt_check_batch_completion.py -f /path/to/project_stats.json
 # or 
-# python3.10 omt_check_batch_completion.py -f /path/to/project_stats.txt -b 03_COS_SCI-C_N
+# python3.10 omt_check_batch_completion.py -f /path/to/project_stats.txt
 
 '''
 this script assumes that the source folder has the following 2-level structure
@@ -31,6 +31,8 @@ source  tree .
 import sys, os, re
 import pandas as pd
 import json
+import argparse
+from functools import reduce
 
 ### functions
 
@@ -96,36 +98,41 @@ def get_batch_status_from_text(fpath, regex):
     return completed
 
 
-# argument after -f 
-fpath = sys.argv[2]
-# argument after -b 
-batch = sys.argv[4]
-
-### constants
-
-completed = {}
-# fpath = "project_stats.txt"
-# fpath = "output.json"
-# batch_name_pattern = r"^(batch\d+)/"
-batch_name_pattern = r"^" + re.escape(batch) + r"/"
-regex = re.compile(batch_name_pattern, re.IGNORECASE)
-
-
 ### logic 
-
 if __name__ == "__main__":
 
-    if not os.path.isfile(fpath):
-        print("File not found.")
-        sys.exit(0)
+    parser = argparse.ArgumentParser(prog='omt_check_batch_completion', description='Check batch completion based on the (already existing) project_stats.json or project_stats.txt files')
+    parser.add_argument('-f', '--filename', help='Path to stats file (either json or txt). Required.')
+    parser.add_argument('-b', '--batch', help='Batch to check for completion. If not defined it looks for all batches/remaining segments')
+    parser.add_argument('-s', '--single', help='Returns a single value/string only, a True or a False', action="store_true")
+    args = parser.parse_args()
 
-    if fpath.lower().endswith(('.json')):
-        completed = get_batch_status_from_json(fpath, regex)
-    elif fpath.lower().endswith(('.txt')):
-        completed = get_batch_status_from_text(fpath, regex)
+    if not args.filename or not os.path.isfile(args.filename):
+        parser.print_help(sys.stderr)
+        sys.stderr.write(f'\nERROR: filename "{args.filename}" is not defined or not a file!\n')
+        sys.exit(1)
+
+    ### constants
+    completed = {}
+    if args.batch:
+        batch_name_pattern = r"^" + re.escape(args.batch) + r"/"
+    else:
+        # We  create a batch looking regex so the project_stats.txt file is also properly parsed
+        batch_name_pattern = r"^[0-9]{2}_[-_A-Z]+/"
+    regex = re.compile(batch_name_pattern, re.IGNORECASE)
+
+    if args.filename.lower().endswith(('.json')):
+        completed = get_batch_status_from_json(args.filename, regex)
+    elif args.filename.lower().endswith(('.txt')):
+        completed = get_batch_status_from_text(args.filename, regex)
 
     # print results
-    #for k, v in completed.items():
-    #    print(f"batch '{k}' complete? {v}")
-    # Also return false when the batch is not found
-    print("True" if completed.get(batch,False) else "False"
+    if not args.single:
+        for k, v in completed.items():
+            print(f"batch '{k}' complete? {v}")
+    elif args.batch:
+        print("True" if completed.get(args.batch, False) else "False")
+    else:
+        print(reduce(lambda a, b: a and b, completed.values(), True))
+    
+
